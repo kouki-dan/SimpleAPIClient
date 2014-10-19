@@ -13,6 +13,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let sharedClient = MyClient.sharedInstance
+        //sharedClient.yourAPI()
+        
+        
+        sharedClient.fetchGithubReposFromUser("kouki-dan", success: { (task, response) in
+            println(response)
+            // TODO:Insert cells for repos
+        })
+
     }
 
     override func didReceiveMemoryWarning() {
